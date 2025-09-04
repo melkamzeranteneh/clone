@@ -1,11 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home'
-import MovieCard from './components/MovieCard'
+import './css/App.css';
+import Favorite from './pages/Favorite';
+import Home from './pages/Home';
+import {Routes, Route} from "react-router-dom";
+import NavBar from './components/NavBar';
 function App() {
   return (
-    <Home />
+    <div>
+      <NavBar />
+      <main className=''>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/favorite" element={<Favorite />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
-export default App
+export default App;
